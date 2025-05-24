@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pervos Volleyball Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .hero-slider .slide {
+            display: none;
+        }
+        .hero-slider .slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+        /* Direktif @apply dihapus dari sini karena tidak berfungsi dengan CDN di <style> */
+        /* Styling untuk .section-title, .card-hover, .btn-primary, .btn-secondary, nav links
+           sekarang diterapkan langsung di HTML menggunakan kelas utilitas Tailwind. */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f0f4f8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #60a5fa;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#beranda" class="flex items-center space-x-2">
+                    <img src="image/bolavoli-removebg-preview.png" alt="Logo Pervos" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-blue-600">PERVOS</span>
+                </a>
+
+                <button id="mobileMenuButton" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                    <span class="sr-only">Buka menu</span>
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <ul class="flex space-x-6 lg:space-x-8 text-gray-700 font-medium">
+                        <li><a href="#beranda" class="transition-colors duration-300 hover:text-blue-500">Beranda</a></li>
+                        <li><a href="#tentang-kami" class="transition-colors duration-300 hover:text-blue-500">Tentang Kami</a></li>
+                        <li><a href="#tim-kami" class="transition-colors duration-300 hover:text-blue-500">Tim Kami</a></li>
+                        <li><a href="#jadwal" class="transition-colors duration-300 hover:text-blue-500">Jadwal</a></li>
+                        <li><a href="#galeri" class="transition-colors duration-300 hover:text-blue-500">Galeri</a></li>
+                        <li><a href="#kontak" class="transition-colors duration-300 hover:text-blue-500">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mobileMenu" class="md:hidden hidden mt-3 space-y-1">
+                <a href="#beranda" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Beranda</a>
+                <a href="#tentang-kami" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Tentang Kami</a>
+                <a href="#tim-kami" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Tim Kami</a>
+                <a href="#jadwal" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Jadwal</a>
+                <a href="#galeri" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Galeri</a>
+                <a href="#kontak" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="hero-slider absolute inset-0 w-full h-full">
+            <div class="slide active">
+                <img src="image/IMG-20250523-WA0001.jpg" alt="Deskripsi Gambar Slide 1" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div class="slide active">
+                <img src="image/IMG-20250523-WA0002.jpg" alt="Deskripsi Gambar Slide 2" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div class="slide active">
+                <img src="image/IMG-20250523-WA0003.jpg" alt="Deskripsi Gambar Slide 3" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white p-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+                PERVOS: <span class="text-blue-300">Semangat</span> Juara, <span class="text-blue-300">Kekompakan</span> Tim!
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
+                Bergabunglah dengan kami dan rasakan semangat sportivitas serta kebersamaan dalam meraih prestasi.
+            </p>
+            <a href="#tentang-kami" class="text-lg inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="absolute z-10 bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="slider-dot active bg-white h-3 w-3 rounded-full focus:outline-none" data-slide="0"></button>
+            <button class="slider-dot bg-gray-400 h-3 w-3 rounded-full focus:outline-none" data-slide="1"></button>
+            <button class="slider-dot bg-gray-400 h-3 w-3 rounded-full focus:outline-none" data-slide="2"></button>
+        </div>
+    </section>
+
+    <section id="tentang-kami" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 text-gray-800">Tentang <span class="text-blue-600">Pervos</span></h2>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="rounded-lg overflow-hidden shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/IMG-20250523-WA0004.jpg" alt="Tim Pervos" class="w-full h-auto object-cover">
+                </div>
+                <div class="text-lg text-gray-600 space-y-6">
+                    <p><strong>Pervos Volleyball Club</strong> adalah wadah bagi para pecinta bola voli yang berdedikasi untuk mengembangkan bakat, menjunjung tinggi sportivitas, dan membangun kekompakan tim yang solid. Kami percaya bahwa dengan semangat dan kerja keras, setiap individu dapat mencapai potensi terbaiknya.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">Sejarah Singkat</h3>
+                    <p>Didirikan pada tahun [Tahun Berdiri], Pervos telah melalui perjalanan panjang dan mengukir berbagai prestasi. Berawal dari sekelompok kecil penggemar voli, kini kami telah berkembang menjadi klub yang dikenal dengan semangat juang dan kebersamaannya.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">Visi & Misi</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Visi:</strong> Menjadi klub voli terdepan yang inspiratif, berprestasi, dan menjunjung tinggi nilai-nilai sportivitas.</li>
+                        <li><strong>Misi:</strong>
+                            <ul class="list-circle list-inside ml-6 space-y-1 mt-1">
+                                <li>Menyediakan program latihan yang berkualitas dan profesional.</li>
+                                <li>Membina atlet-atlet muda berbakat.</li>
+                                <li>Menciptakan lingkungan yang positif dan suportif bagi seluruh anggota.</li>
+                                <li>Berpartisipasi aktif dalam kompetisi lokal maupun nasional.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tim-kami" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 text-gray-800">Skuad <span class="text-blue-600">Pervos</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/200x200/e0e7ff/3730a3?text=Pemain+1" alt="Nama Pemain 1" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Nama Pemain Satu</h3>
+                    <p class="text-blue-600 font-medium">Posisi: Spiker</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/200x200/e0e7ff/3730a3?text=Pemain+2" alt="Nama Pemain 2" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Nama Pemain Dua</h3>
+                    <p class="text-blue-600 font-medium">Posisi: Setter</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/200x200/e0e7ff/3730a3?text=Pemain+3" alt="Nama Pemain 3" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Nama Pemain Tiga</h3>
+                    <p class="text-blue-600 font-medium">Posisi: Libero</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/200x200/e0e7ff/3730a3?text=Pemain+4" alt="Nama Pemain 4" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Nama Pemain Empat</h3>
+                    <p class="text-blue-600 font-medium">Posisi: Middle Blocker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jadwal" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 text-gray-800">Jadwal & <span class="text-blue-600">Kegiatan</span></h2>
+            <div class="max-w-3xl mx-auto bg-gray-50 p-6 sm:p-8 rounded-xl shadow-lg">
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4 py-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800">Latihan Rutin</h3>
+                        <p class="text-gray-600"><i class="fas fa-calendar-alt mr-2 text-blue-500"></i>Setiap Selasa & Kamis</p>
+                        <p class="text-gray-600"><i class="fas fa-clock mr-2 text-blue-500"></i>19:00 - 21:00 WIB</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>GOR Pervos Utama</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-4 py-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800">Pertandingan Persahabatan vs Klub Jaya</h3>
+                        <p class="text-gray-600"><i class="fas fa-calendar-alt mr-2 text-red-500"></i>Sabtu, 15 Juni 2025</p>
+                        <p class="text-gray-600"><i class="fas fa-clock mr-2 text-red-500"></i>15:00 WIB</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i>Lapangan Voli Klub Jaya</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4 py-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800">Coaching Clinic Junior</h3>
+                        <p class="text-gray-600"><i class="fas fa-calendar-alt mr-2 text-green-500"></i>Minggu, 30 Juni 2025</p>
+                        <p class="text-gray-600"><i class="fas fa-clock mr-2 text-green-500"></i>09:00 - 12:00 WIB</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-green-500"></i>GOR Pervos Utama</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 text-gray-800">Galeri <span class="text-blue-600">Pervos</span></h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/10.jpg" alt="Galeri Foto 1" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/1.jpg" alt="Galeri Foto 2" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/2.jpg" alt="Galeri Foto 3" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/3.jpg" alt="Galeri Foto 4" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/14.jpg" alt="Galeri Foto 5" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/15.jpg" alt="Galeri Foto 6" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/16.jpg" alt="Galeri Foto 7" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md aspect-square transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <img src="image/17.jpg" alt="Galeri Video 1" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">Lihat Semua Galeri</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-16 md:py-24 bg-gray-800 text-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 text-gray-800 !text-white">Hubungi <span class="text-blue-400">Kami</span></h2>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Kirim Pesan</h3>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label for="nama" class="block text-sm font-medium text-gray-300">Nama Lengkap</label>
+                            <input type="text" name="nama" id="nama" required class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Alamat Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label for="pesan" class="block text-sm font-medium text-gray-300">Pesan Anda</label>
+                            <textarea name="pesan" id="pesan" rows="4" required class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="text-gray-300">
+                    <h3 class="text-2xl font-semibold mb-4">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-map-marker-alt fa-fw mr-3 text-blue-400"></i>Desa Sindet Lami Kec.Besuk Kab.Probolinggo</p>
+                        <p><i class="fas fa-envelope fa-fw mr-3 text-blue-400"></i><a href="mailto:pervosclub@gmail.com" class="hover:text-blue-300">pervosclub@gmail.com</a></p>
+                        <p><i class="fas fa-phone fa-fw mr-3 text-blue-400"></i><a href="tel:+621234567890" class="hover:text-blue-300">+62 123 456 7890</a></p>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Media Sosial</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Pervos Volleyball Club.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM fully loaded and parsed");
+
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuButton && mobileMenu) {
+                console.log("Mobile menu elements found");
+                mobileMenuButton.addEventListener('click', () => {
+                    console.log("Mobile menu button clicked");
+                    mobileMenu.classList.toggle('hidden');
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        mobileMenuButton.innerHTML = `<span class="sr-only">Tutup menu</span><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                    } else {
+                        mobileMenuButton.innerHTML = `<span class="sr-only">Buka menu</span><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+                    }
+                });
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        console.log("Mobile menu link clicked");
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        mobileMenuButton.innerHTML = `<span class="sr-only">Buka menu</span><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+                    });
+                });
+            } else {
+                console.error("Mobile menu elements NOT found");
+            }
+
+            const slides = document.querySelectorAll('.hero-slider .slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            const slideIntervalTime = 5000;
+            let slideTimer;
+
+            console.log(`Found ${slides.length} slides and ${dots.length} dots.`);
+
+            function showSlide(index) {
+                if (!slides.length || !dots.length) {
+                    console.error("Slides or dots not found in showSlide function.");
+                    return;
+                }
+                console.log(`Attempting to show slide ${index}`);
+
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (dots[i]) {
+                        dots[i].classList.remove('bg-white', 'active');
+                        dots[i].classList.add('bg-gray-400');
+                    }
+                });
+
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                    console.log(`Slide ${index} is now active.`);
+                } else {
+                    console.error(`Slide with index ${index} not found when trying to activate.`);
+                }
+
+                if (dots[index]) {
+                    dots[index].classList.add('bg-white', 'active');
+                    dots[index].classList.remove('bg-gray-400');
+                } else {
+                    console.error(`Dot with index ${index} not found when trying to activate.`);
+                }
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                if (!slides.length) {
+                    console.log("No slides to iterate in nextSlide.");
+                    return;
+                }
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function startSlider() {
+                if (slides.length > 0 && dots.length > 0 && slides.length === dots.length) {
+                    console.log("Slider conditions met. Starting slider...");
+                    showSlide(0);
+                    if (slideTimer) {
+                        clearInterval(slideTimer);
+                    }
+                    slideTimer = setInterval(nextSlide, slideIntervalTime);
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            console.log(`Dot ${index} manually clicked`);
+                            showSlide(index);
+                            clearInterval(slideTimer); 
+                            slideTimer = setInterval(nextSlide, slideIntervalTime); 
+                        });
+                    });
+                } else {
+                    console.error("Slider prerequisites not met. Check slides and dots count/existence.");
+                    if(slides.length !== dots.length) {
+                        console.error(`Slide count (${slides.length}) and dot count (${dots.length}) do not match.`);
+                    }
+                }
+            }
+            
+            startSlider();
+
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
